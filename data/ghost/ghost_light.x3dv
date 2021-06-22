@@ -1,0 +1,10 @@
+#X3D V3.2 utf8
+PROFILE Interchange
+
+PointLight {
+  location 2 0 4
+  shadowVolumes TRUE
+  shadowVolumesMain TRUE
+  global TRUE
+}
+

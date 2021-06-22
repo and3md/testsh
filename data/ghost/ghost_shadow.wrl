@@ -1,0 +1,17 @@
+#VRML V1.0 ascii
+
+# Demo that partially transparent object works as shadow caster too.
+# Using "ghost" from castle-game data.
+
+Group {
+  WWWInline { name "ghost_header.wrl" separate FALSE }
+  WWWInline { name "ghost_stand_1.wrl" }
+}
+
+Translation {
+  translation 0 0 -1
+}
+
+Cube {
+  #width 1 height 1 depth 1
+}
