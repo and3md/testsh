@@ -507,6 +507,256 @@
           {
             "ExposeTransforms" : [
             ],
+            "Name" : "SceneSoldier21",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : -3.8255581855773926E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier22",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : -4.9094696044921875E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier23",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : -2.5366082191467285E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier24",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : -6.1231274604797363E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier25",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : -7.2059378623962402E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier26",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : -1.3371791839599609E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier27",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : 4.1777968406677246E-002,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier28",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : -9.9900114536285400E-001,
+              "Z" : -8.0051403045654297E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier29",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : 1.9084298610687256E-001,
+              "Z" : -4.2915906906127930E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
+            "Name" : "SceneSoldier30",
+            "RenderOptions" : {
+              "Name" : "RenderOptions",
+              "$Children" : [
+              ],
+              "$ClassName" : "TCastleScene.TSceneRenderOptions"
+            },
+            "Spatial" : [
+              "ssRendering",
+              "ssDynamicCollisions"
+            ],
+            "TranslationPersistent" : {
+              "X" : -2.4665541648864746E+000,
+              "Y" : 1.9084298610687256E-001,
+              "Z" : -3.0466520786285400E+000,
+              "$ClassName" : "TCastleVector3Persistent"
+            },
+            "URL" : "castle-data:/enemy/soldier1.gltf",
+            "$Children" : [
+            ],
+            "$ClassName" : "TCastleScene"
+          },
+          {
+            "ExposeTransforms" : [
+            ],
             "Name" : "SceneSoldier2",
             "RenderOptions" : {
               "Name" : "RenderOptions",
