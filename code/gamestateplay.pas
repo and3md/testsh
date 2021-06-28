@@ -24,6 +24,7 @@ type
     ButtonShadowImplementation: TCastleButton;
     ButtonRenderVersion: TCastleButton;
     ButtonDepthOrOffset: TCastleButton;
+    ButtonDepthVersion: TCastleButton;
     ButtonIncUpdateFactor: TCastleButton;
     ButtonDecUpdateFactor: TCastleButton;
 
@@ -38,9 +39,10 @@ type
     procedure ButtonShadowImplementationClick(Sender: TObject);
     procedure ButtonRenderVersionClick(Sender: TObject);
     procedure ButtonDepthOrOffsetClick(Sender: TObject);
+    procedure ButtonDepthVersionClick(Sender: TObject);
     procedure ButtonIncUpdateFactorClick(Sender: TObject);
     procedure ButtonDecUpdateFactorClick(Sender: TObject);
-    procedure UpdateButtonIncDecFactorCaption;
+    procedure UpdateButtons;
   end;
 
 var
@@ -72,38 +74,25 @@ begin
   LabelFps := DesignedComponent('LabelFps') as TCastleLabel;
   MainViewport := DesignedComponent('MainViewport') as TCastleViewport;
   WalkNavigation := DesignedComponent('WalkNavigation') as TCastleWalkNavigation;
-  ButtonShadowImplementation := DesignedComponent('ButtonShadowImplementation') as TCastleButton;
 
+  ButtonShadowImplementation := DesignedComponent('ButtonShadowImplementation') as TCastleButton;
   ButtonShadowImplementation.OnClick := @ButtonShadowImplementationClick;
 
-  if InternalUseOldShadowVolumes then
-    ButtonShadowImplementation.Caption := 'Current: Old implementation'
-  else
-    ButtonShadowImplementation.Caption := 'Current: New implementation';
-
   ButtonRenderVersion := DesignedComponent('ButtonRenderVersion') as TCastleButton;
-
   ButtonRenderVersion.OnClick := @ButtonRenderVersionClick;
 
-  if InternalShadowVolumesOldRender then
-    ButtonRenderVersion.Caption := 'Current: Old render() with pop/push'
-  else
-    ButtonRenderVersion.Caption := 'Current: New render() without pop/push';
-
   ButtonDepthOrOffset := DesignedComponent('ButtonDepthOrOffset') as TCastleButton;
-
   ButtonDepthOrOffset.OnClick := @ButtonDepthOrOffsetClick;
 
-  if InternalShadowVolumesUseDepth then
-    ButtonDepthOrOffset.Caption := 'Current: Depth'
-  else
-    ButtonDepthOrOffset.Caption := 'Current: Polygon offset';
+  ButtonDepthVersion := DesignedComponent('ButtonDepthVersion') as TCastleButton;
+  ButtonDepthVersion.OnClick := @ButtonDepthVersionClick;
 
   ButtonIncUpdateFactor := DesignedComponent('ButtonIncUpdateFactor') as TCastleButton;
   ButtonDecUpdateFactor := DesignedComponent('ButtonDecUpdateFactor') as TCastleButton;
-  UpdateButtonIncDecFactorCaption;
   ButtonIncUpdateFactor.OnClick := @ButtonIncUpdateFactorClick;
   ButtonDecUpdateFactor.OnClick := @ButtonDecUpdateFactorClick;
+
+  UpdateButtons;
 
   {$ifdef OpenGLES}
     ButtonRenderVersion.Enabled := false;
@@ -192,53 +181,68 @@ end;
 procedure TStatePlay.ButtonShadowImplementationClick(Sender: TObject);
 begin
   InternalUseOldShadowVolumes := not InternalUseOldShadowVolumes;
-
-  if InternalUseOldShadowVolumes then
-    ButtonShadowImplementation.Caption := 'Current: Old implementation'
-  else
-    ButtonShadowImplementation.Caption := 'Current: New implementation';
+  UpdateButtons;
 end;
 
 procedure TStatePlay.ButtonRenderVersionClick(Sender: TObject);
 begin
   InternalShadowVolumesOldRender := not InternalShadowVolumesOldRender;
-
-  if InternalShadowVolumesOldRender then
-    ButtonRenderVersion.Caption := 'Current: Old render() with pop/push'
-  else
-    ButtonRenderVersion.Caption := 'Current: New render() without pop/push';
+  UpdateButtons;
 end;
 
 procedure TStatePlay.ButtonDepthOrOffsetClick(Sender: TObject);
 begin
   InternalShadowVolumesUseDepth := not InternalShadowVolumesUseDepth;
+  UpdateButtons;
+end;
+
+procedure TStatePlay.ButtonDepthVersionClick(Sender: TObject);
+begin
+  InternalShadowVolumesUseDepthV2 := not InternalShadowVolumesUseDepthV2;
+  UpdateButtons;
+end;
+
+procedure TStatePlay.UpdateButtons;
+begin
+  if InternalUseOldShadowVolumes then
+    ButtonShadowImplementation.Caption := 'Current: Old implementation'
+  else
+    ButtonShadowImplementation.Caption := 'Current: New implementation';
+
+  if InternalShadowVolumesOldRender then
+    ButtonRenderVersion.Caption := 'Current: Old render() with pop/push'
+  else
+    ButtonRenderVersion.Caption := 'Current: New render() without pop/push';
 
   if InternalShadowVolumesUseDepth then
     ButtonDepthOrOffset.Caption := 'Current: Depth'
   else
     ButtonDepthOrOffset.Caption := 'Current: Polygon offset';
-end;
 
-procedure TStatePlay.ButtonIncUpdateFactorClick(Sender: TObject);
-begin
-  Inc(MainViewport.InternalShadowVolumeUpdateFactor);
-  UpdateButtonIncDecFactorCaption;
-end;
+  if InternalShadowVolumesUseDepthV2 then
+    ButtonDepthVersion.Caption := 'Depth V2'
+  else
+    ButtonDepthVersion.Caption := 'Depth V1';
 
-procedure TStatePlay.ButtonDecUpdateFactorClick(Sender: TObject);
-begin
-  if MainViewport.InternalShadowVolumeUpdateFactor > 0 then
-    Dec(MainViewport.InternalShadowVolumeUpdateFactor);
-  UpdateButtonIncDecFactorCaption;
-end;
-
-procedure TStatePlay.UpdateButtonIncDecFactorCaption;
-begin
   ButtonIncUpdateFactor.Caption := 'Inc upd factor (' +
     IntToStr(MainViewport.InternalShadowVolumeUpdateFactor) + ')';
 
   ButtonDecUpdateFactor.Caption := 'Dec upd factor (' +
     IntToStr(MainViewport.InternalShadowVolumeUpdateFactor) + ')';
 end;
+
+procedure TStatePlay.ButtonIncUpdateFactorClick(Sender: TObject);
+begin
+  Inc(MainViewport.InternalShadowVolumeUpdateFactor);
+  UpdateButtons;
+end;
+
+procedure TStatePlay.ButtonDecUpdateFactorClick(Sender: TObject);
+begin
+  if MainViewport.InternalShadowVolumeUpdateFactor > 0 then
+    Dec(MainViewport.InternalShadowVolumeUpdateFactor);
+  UpdateButtons;
+end;
+
 
 end.

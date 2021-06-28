@@ -5,9 +5,9 @@
     {
       "Camera" : {
         "InitialDirectionPersistent" : {
-          "X" : 8.8633656501770020E-001,
-          "Y" : -1.0004875808954239E-001,
-          "Z" : 4.5210346579551697E-001,
+          "X" : 8.2254219055175781E-001,
+          "Y" : -9.5482066273689270E-002,
+          "Z" : 5.6063127517700195E-001,
           "$ClassName" : "TCastleVector3Persistent"
         },
         "InitialPositionPersistent" : {
@@ -17,9 +17,9 @@
           "$ClassName" : "TCastleVector3Persistent"
         },
         "InitialUpPersistent" : {
-          "X" : 1.0495075583457947E-001,
-          "Y" : 9.9437463283538818E-001,
-          "Z" : 1.4298175461590290E-002,
+          "X" : 1.0567459464073181E-001,
+          "Y" : 9.9429804086685181E-001,
+          "Z" : 1.4297856949269772E-002,
           "$ClassName" : "TCastleVector3Persistent"
         },
         "Name" : "Camera",
@@ -1017,7 +1017,7 @@
           "$ClassName" : "TCastleButton"
         },
         {
-          "Caption" : "ButtonIncUpdateFactor",
+          "Caption" : "ButtonDepthVersion",
           "CustomBackgroundDisabled" : {
             "$ClassName" : "TCastleImagePersistent"
           },
@@ -1031,6 +1031,31 @@
             "$ClassName" : "TCastleImagePersistent"
           },
           "HorizontalAnchorDelta" : 7.9400006103515625E+002,
+          "Image" : {
+            "$ClassName" : "TCastleImagePersistent"
+          },
+          "Name" : "ButtonDepthVersion",
+          "VerticalAnchorParent" : "vpMiddle",
+          "VerticalAnchorSelf" : "vpMiddle",
+          "$Children" : [
+          ],
+          "$ClassName" : "TCastleButton"
+        },
+        {
+          "Caption" : "ButtonIncUpdateFactor",
+          "CustomBackgroundDisabled" : {
+            "$ClassName" : "TCastleImagePersistent"
+          },
+          "CustomBackgroundFocused" : {
+            "$ClassName" : "TCastleImagePersistent"
+          },
+          "CustomBackgroundNormal" : {
+            "$ClassName" : "TCastleImagePersistent"
+          },
+          "CustomBackgroundPressed" : {
+            "$ClassName" : "TCastleImagePersistent"
+          },
+          "HorizontalAnchorDelta" : 1.0180000610351562E+003,
           "Image" : {
             "$ClassName" : "TCastleImagePersistent"
           },
@@ -1055,7 +1080,7 @@
           "CustomBackgroundPressed" : {
             "$ClassName" : "TCastleImagePersistent"
           },
-          "HorizontalAnchorDelta" : 1.0480001220703125E+003,
+          "HorizontalAnchorDelta" : 1.2720001220703125E+003,
           "Image" : {
             "$ClassName" : "TCastleImagePersistent"
           },
