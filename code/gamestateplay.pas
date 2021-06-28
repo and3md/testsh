@@ -27,6 +27,11 @@ type
     ButtonDepthVersion: TCastleButton;
     ButtonIncUpdateFactor: TCastleButton;
     ButtonDecUpdateFactor: TCastleButton;
+    Button10Soldiers: TCastleButton;
+    Button20Soldiers: TCastleButton;
+    Button30Soldiers: TCastleButton;
+    SoldiersScenes: array [1..40] of TCastleScene;
+
 
     { Enemies behaviors }
     Enemies: TEnemyList;
@@ -42,6 +47,7 @@ type
     procedure ButtonDepthVersionClick(Sender: TObject);
     procedure ButtonIncUpdateFactorClick(Sender: TObject);
     procedure ButtonDecUpdateFactorClick(Sender: TObject);
+    procedure ButtonSoldiersClick(Sender: TObject);
     procedure UpdateButtons;
   end;
 
@@ -92,7 +98,20 @@ begin
   ButtonIncUpdateFactor.OnClick := @ButtonIncUpdateFactorClick;
   ButtonDecUpdateFactor.OnClick := @ButtonDecUpdateFactorClick;
 
+  Button10Soldiers := DesignedComponent('Button10Soldiers') as TCastleButton;
+  Button20Soldiers := DesignedComponent('Button20Soldiers') as TCastleButton;
+  Button30Soldiers := DesignedComponent('Button30Soldiers') as TCastleButton;
+
+  Button10Soldiers.OnClick := @ButtonSoldiersClick;
+  Button20Soldiers.OnClick := @ButtonSoldiersClick;
+  Button30Soldiers.OnClick := @ButtonSoldiersClick;
+
   UpdateButtons;
+
+  for I := 1 to 30 do
+  begin
+    SoldiersScenes[I] := DesignedComponent('SceneSoldier' + IntToStr(I)) as TCastleScene;
+  end;
 
   {$ifdef OpenGLES}
     ButtonRenderVersion.Enabled := false;
@@ -242,6 +261,23 @@ begin
   if MainViewport.InternalShadowVolumeUpdateFactor > 0 then
     Dec(MainViewport.InternalShadowVolumeUpdateFactor);
   UpdateButtons;
+end;
+
+procedure TStatePlay.ButtonSoldiersClick(Sender: TObject);
+var
+  I, VisibleCount: Integer;
+begin
+  if Sender = Button10Soldiers then
+    VisibleCount := 10
+  else if Sender = Button20Soldiers then
+    VisibleCount := 20
+  else
+    VisibleCount := 30;
+
+  for I := 1 to 30 do
+  begin
+    SoldiersScenes[I].Exists := (VisibleCount >= I);
+  end;
 end;
 
 
