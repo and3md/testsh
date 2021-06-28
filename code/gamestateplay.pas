@@ -24,6 +24,8 @@ type
     ButtonShadowImplementation: TCastleButton;
     ButtonRenderVersion: TCastleButton;
     ButtonDepthOrOffset: TCastleButton;
+    ButtonIncUpdateFactor: TCastleButton;
+    ButtonDecUpdateFactor: TCastleButton;
 
     { Enemies behaviors }
     Enemies: TEnemyList;
@@ -36,6 +38,9 @@ type
     procedure ButtonShadowImplementationClick(Sender: TObject);
     procedure ButtonRenderVersionClick(Sender: TObject);
     procedure ButtonDepthOrOffsetClick(Sender: TObject);
+    procedure ButtonIncUpdateFactorClick(Sender: TObject);
+    procedure ButtonDecUpdateFactorClick(Sender: TObject);
+    procedure UpdateButtonIncDecFactorCaption;
   end;
 
 var
@@ -93,6 +98,12 @@ begin
     ButtonDepthOrOffset.Caption := 'Current: Depth'
   else
     ButtonDepthOrOffset.Caption := 'Current: Polygon offset';
+
+  ButtonIncUpdateFactor := DesignedComponent('ButtonIncUpdateFactor') as TCastleButton;
+  ButtonDecUpdateFactor := DesignedComponent('ButtonDecUpdateFactor') as TCastleButton;
+  UpdateButtonIncDecFactorCaption;
+  ButtonIncUpdateFactor.OnClick := @ButtonIncUpdateFactorClick;
+  ButtonDecUpdateFactor.OnClick := @ButtonDecUpdateFactorClick;
 
   {$ifdef OpenGLES}
     ButtonRenderVersion.Enabled := false;
@@ -206,6 +217,28 @@ begin
     ButtonDepthOrOffset.Caption := 'Current: Depth'
   else
     ButtonDepthOrOffset.Caption := 'Current: Polygon offset';
+end;
+
+procedure TStatePlay.ButtonIncUpdateFactorClick(Sender: TObject);
+begin
+  Inc(MainViewport.InternalShadowVolumeUpdateFactor);
+  UpdateButtonIncDecFactorCaption;
+end;
+
+procedure TStatePlay.ButtonDecUpdateFactorClick(Sender: TObject);
+begin
+  if MainViewport.InternalShadowVolumeUpdateFactor > 0 then
+    Dec(MainViewport.InternalShadowVolumeUpdateFactor);
+  UpdateButtonIncDecFactorCaption;
+end;
+
+procedure TStatePlay.UpdateButtonIncDecFactorCaption;
+begin
+  ButtonIncUpdateFactor.Caption := 'Inc upd factor (' +
+    IntToStr(MainViewport.InternalShadowVolumeUpdateFactor) + ')';
+
+  ButtonDecUpdateFactor.Caption := 'Dec upd factor (' +
+    IntToStr(MainViewport.InternalShadowVolumeUpdateFactor) + ')';
 end;
 
 end.
